@@ -3,7 +3,7 @@
 galaxy_info:
   author: Marcelo Correia
   company: BulletProof
-  description: "Install Hashicorp's Nomad"
+  description: "Install Hashicorp's Otto"
   min_ansible_version: 1.4
   license: MIT
   platforms:
