@@ -1,20 +1,20 @@
 ---
-- name: Downloads Hashicorp's Otto
+- name: Downloads Hashicorp's Serf
   get_url: >
-    url="{{ install.download_location}}/otto_{{ otto.version}}_linux_{{ otto.arch}}.zip"
+    url="{{ install.download_location}}/{{ serf.version}}_linux_{{ serf.arch}}.zip"
     dest="/tmp/"
     mode=0755
   sudo: yes
   tags:
     - hashicorp
-    - otto
+    - serf
 
-- name: Downloads Hashicorp's otto
+- name: Downloads Hashicorp's serf
   unarchive: >
-    src="/tmp/otto_{{ otto.version}}_linux_{{ otto.arch}}.zip"
+    src="/tmp/{{ serf.version}}_linux_{{ serf.arch}}.zip"
     dest="{{ install.dir }}"
     mode=0755
   sudo: yes
   tags:
     - hashicorp
-    - otto
+    - serf

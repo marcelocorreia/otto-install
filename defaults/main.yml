@@ -1,8 +1,8 @@
 ---
-otto:
-  version: 0.1.2
+serf:
+  version: 0.6.4
   arch: amd64
 
 install:
   dir : /usr/local/bin
-  download_location: https://dl.bintray.com/mitchellh/otto
+  download_location: https://dl.bintray.com/mitchellh/serf
