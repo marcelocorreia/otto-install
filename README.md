@@ -1,2 +1,1 @@
 # otto-install
-# serf-install
