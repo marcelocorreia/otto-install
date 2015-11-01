@@ -5,4 +5,4 @@ otto:
 
 install:
   dir : /usr/local/bin
-  download_location: https://releases.hashicorp.com/otto/
+  download_location: https://releases.hashicorp.com/otto

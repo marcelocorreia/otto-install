@@ -1,20 +1,19 @@
 ---
 - name: Downloads Hashicorp's otto
   get_url: >
-    url="{{ install.download_location }}/otto_{{ otto.version }}_linux_{{ otto.arch }}.zip"
+    url="{{ install.download_location }}/{{ otto.version }}/otto_{{ otto.version }}_linux_{{ otto.arch }}.zip"
     dest="/tmp/"
     mode=0755
-  sudo: yes
+  sudo: no
   tags:
     - hashicorp
     - otto
+    - install
 
-- name: Downloads Hashicorp's otto
-  unarchive: >
-    src="/tmp/otto{{ otto.version }}_linux_{{ otto.arch }}.zip"
-    dest="{{ install.dir }}"
-    mode=0755
+- name: Installs Hashicorp's otto
+  shell: unzip -u -d {{ install.dir }} /tmp/otto_{{ otto.version }}_linux_{{ otto.arch }}.zip ; chmod 775 {{ install.dir }}/otto ; chown root:staff {{ install.dir }}/otto
   sudo: yes
   tags:
     - hashicorp
     - otto
+    - install
