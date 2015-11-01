@@ -6,6 +6,7 @@ Installs [Hasicorp's Otto](https://ottoproject.io)
 
 ## Role Variables
 ```yml
+
 ---
 otto:
   version: 0.1.2
@@ -14,12 +15,14 @@ otto:
 install:
   dir : /usr/local/bin
   download_location: https://releases.hashicorp.com/otto/
+
 ```
 
 
 Example Playbook
 ----------------
 ```yml
+
 ---
 - hosts: local
   sudo: true
@@ -30,6 +33,7 @@ Example Playbook
 
   vars_files:
     - ../vars/tardis.yml
+    
 ```
 
 License
