@@ -1,7 +1,7 @@
 ---
 - name: Downloads Hashicorp's otto
   get_url: >
-    url="{{ install.download_location }}/{{ otto.version }}_linux_{{ otto.arch }}.zip"
+    url="{{ install.download_location }}/otto_{{ otto.version }}_linux_{{ otto.arch }}.zip"
     dest="/tmp/"
     mode=0755
   sudo: yes
@@ -11,7 +11,7 @@
 
 - name: Downloads Hashicorp's otto
   unarchive: >
-    src="/tmp/{{ otto.version }}_linux_{{ otto.arch }}.zip"
+    src="/tmp/otto{{ otto.version }}_linux_{{ otto.arch }}.zip"
     dest="{{ install.dir }}"
     mode=0755
   sudo: yes
