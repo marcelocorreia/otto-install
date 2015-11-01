@@ -1,6 +1,6 @@
 # otto-install
 
-Installs [Hasicorp's](http://hashicorp.com) [Otto](https://ottoproject.io)
+Installs [Hasicorp's Otto](https://ottoproject.io)
 
 
 
