@@ -1,6 +1,6 @@
-# packer-install
+# otto-install
 
-Installs [Hasicorp's Packer](https://packer.io)
+Installs [Hashicorp's Packer](https://ottoproject.io)
 
 
 
@@ -8,13 +8,13 @@ Installs [Hasicorp's Packer](https://packer.io)
 ```yml
 
 ---
-packer:
+otto:
   version: 0.8.6
   arch: amd64
 
 install:
   dir : /usr/local/bin
-  download_location: https://releases.hashicorp.com/packer/
+  download_location: https://releases.hashicorp.com/otto/
 
 ```
 
@@ -29,7 +29,7 @@ Example Playbook
   gather_facts: true
 
   roles:
-    - marcelocorreia.packer-install
+    - marcelocorreia.otto-install
 
   vars_files:
     - ../vars/tardis.yml

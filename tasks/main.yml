@@ -1,13 +1,13 @@
 ---
-- name: Downloads Hashicorp's packer
+- name: Downloads Hashicorp's otto
   get_url: >
-    url="{{ install.download_location }}/{{ packer.version }}/packer_{{ packer.version }}_linux_{{ packer.arch }}.zip"
+    url="{{ install.download_location }}/{{ otto.version }}/otto_{{ otto.version }}_linux_{{ otto.arch }}.zip"
     dest="/tmp/"
     mode=0755
   sudo: no
   tags:
     - hashicorp
-    - packer
+    - otto
     - install
 
 - name: Installs Hashicorp's otto
@@ -15,5 +15,5 @@
   sudo: yes
   tags:
     - hashicorp
-    - packer
+    - otto
     - install
