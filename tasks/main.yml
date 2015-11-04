@@ -10,8 +10,8 @@
     - packer
     - install
 
-- name: Installs Hashicorp's packer
-  shell: unzip -u -d {{ install.dir }} /tmp/packer_{{ packer.version }}_linux_{{ packer.arch }}.zip ; chmod 770 {{ install.dir }}/packer* ; chown root:staff {{ install.dir }}/packer
+- name: Installs Hashicorp's otto
+  shell: unzip -u -d {{ install.dir }} /tmp/otto_{{ otto.version }}_linux_{{ otto.arch }}.zip ; chmod 770 {{ install.dir }}/otto ; chown root:staff {{ install.dir }}/otto
   sudo: yes
   tags:
     - hashicorp
