@@ -1,19 +1,40 @@
 ---
-- name: Downloads Hashicorp's otto
+- name: Downloads Package
   get_url: >
-    url="{{ install.download_location }}/{{ otto.version }}/otto_{{ otto.version }}_linux_{{ otto.arch }}.zip"
-    dest="/tmp/"
+    url="{{ install.download_location}}/{{ app.version }}/{{ app.name }}_{{ app.version }}_{{ app.arch }}.zip"
+    dest="/tmp/{{ app.name }}_{{ app.version }}_{{ app.arch }}.zip"
     mode=0755
+    force={{ install.force_download | default(false)}}
   sudo: no
   tags:
     - hashicorp
     - otto
     - install
+    - download
 
-- name: Installs Hashicorp's otto
-  shell: unzip -u -d {{ install.dir }} /tmp/otto_{{ otto.version }}_linux_{{ otto.arch }}.zip ; chmod 770 {{ install.dir }}/otto ; chown root:staff {{ install.dir }}/otto
+- name: Unpacks to location
+  unarchive: >
+    src=/tmp/{{ app.name }}_{{ app.version }}_{{ app.arch }}.zip
+    dest={{ install.dir }}
+    copy=no
+    mode=755
   sudo: yes
   tags:
     - hashicorp
     - otto
     - install
+    - unarchive
+
+- name: Fix permissions on files (Workaround while waiting for 2.0)
+  file: path={{ install.dir }}/{{ item }}
+    owner={{ app.file_owner | default('root') }}
+    group={{ app.file_group | default('root') }}
+    mode=755
+  sudo: yes
+  with_items:
+    - "{{ install.file_list }}"
+  tags:
+    - hashicorp
+    - otto
+    - install
+    - workaround
