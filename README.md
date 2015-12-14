@@ -8,13 +8,15 @@ Installs [Hashicorp's Packer](https://ottoproject.io)
 ```yml
 
 ---
-otto:
-  version: 0.8.6
-  arch: amd64
+app:
+  name: otto
+  version: 0.1.2
 
 install:
   dir : /usr/local/bin
-  download_location: https://releases.hashicorp.com/otto/
+  download_location: https://releases.hashicorp.com/otto
+  file_list:
+    - otto
 
 ```
 
